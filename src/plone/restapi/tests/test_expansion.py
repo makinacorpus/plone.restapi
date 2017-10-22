@@ -10,6 +10,7 @@ from plone.restapi.interfaces import IExpandableElement
 from plone.restapi.serializer.expansion import expandable_elements
 from zope.component import provideAdapter
 from zope.interface import Interface
+from zope.interface import providedBy
 from zope.publisher.browser import TestRequest
 from zope.publisher.interfaces.browser import IBrowserRequest
 
@@ -199,3 +200,27 @@ class TestExpansionFunctional(unittest.TestCase):
             ],
             response.json()['@components']['workflow']['transitions']
         )
+
+    def test_interfaces_is_expandable(self):
+        response = self.api_session.get('/folder')
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(
+            'interfaces',
+            response.json().get('@components').keys()
+        )
+
+    def test_interfaces_expanded(self):
+        response = self.api_session.get(
+            '/folder',
+            params={
+                "expand": "interfaces"
+            }
+        )
+        self.assertEqual(response.status_code, 200)
+
+        for provided_interface in providedBy(self.folder):
+            self.assertIn(
+                provided_interface.__identifier__,
+                response.json()['@components']['interfaces']['items']
+            )
