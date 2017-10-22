@@ -4,6 +4,9 @@ Changelog
 1.0a22 (unreleased)
 -------------------
 
+- Add an @interfaces endpoint to return the interfaces provided by the context object
+  [erral]
+
 - Strip spaces from TextLine values to match z3c.form implementation.
   [jaroel]
 
