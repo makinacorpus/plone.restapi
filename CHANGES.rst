@@ -7,15 +7,35 @@ Changelog
 - Add an @interfaces endpoint to return the interfaces provided by the context object
   [erral]
 
+New Features:
+
+- Add @translations endpoint
+  [erral]
+
+- Include title in site serialization.
+  [buchi]
+
+- Include is_folderish property on GET request responses. Fixes #327.
+  [sneridagh]
+
+Bugfixes:
+
 - Strip spaces from TextLine values to match z3c.form implementation.
   [jaroel]
 
 - Disallow None and u'' when TextLine is required. Refs #351.
   [jaroel]
 
+- Make getting '/@types/{type_id}' work for non-DX types, ie "Plone Site".
+  [jaroel]
+
 - Remove Products.PasswortResetTool from setup.py since it is
   a soft dependency. It is included in Plone >= 5.1.
   [tomgross]
+
+- Update pytz to fix travis builds
+  [sneridagh]
+
 
 1.0a21 (2017-09-23)
 -------------------

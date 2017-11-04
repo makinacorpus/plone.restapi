@@ -30,5 +30,6 @@ Content-Type: application/json
   "sharing": {
     "@id": "http://localhost:55001/plone/@sharing", 
     "title": "Sharing"
-  }
+  }, 
+  "title": "Plone site"
 }
