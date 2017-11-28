@@ -46,6 +46,11 @@ Bug Fixes
   without permission to get review_history worfklow variable.
   [thomasdesvenain]
 
+Breaking Changes:
+
+- Return the patched object in a patch response.
+  [Gagaro]
+
 
 1.0a25 (2017-11-23)
 -------------------
