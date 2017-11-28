@@ -4,7 +4,10 @@ Changelog
 1.0b1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+Breaking Changes:
+
+- Return the patched object in a patch response.
+  [Gagaro]
 
 
 1.0a25 (2017-11-23)
