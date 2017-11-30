@@ -51,6 +51,9 @@ Breaking Changes:
 - Return the patched object in a patch response.
   [Gagaro]
 
+- Fix workflow translations with unicode characters.
+  [Gagaro]
+
 
 1.0a25 (2017-11-23)
 -------------------
