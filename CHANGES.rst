@@ -54,8 +54,10 @@ Breaking Changes:
 - Fix workflow translations with unicode characters.
   [Gagaro]
 
+Bug Fixes:
 
-Bug Fixes
+- Fix workflow translations with unicode characters.
+  [Gagaro]
 
 - Prevent a fatal error when we get @workflow
   without permission to get review_history worfklow variable.
