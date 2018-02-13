@@ -4,6 +4,9 @@ Changelog
 1.0b1 (unreleased)
 ------------------
 
+- Fix json serialization of dexterity validation errors.
+  [thomasdesvenain]
+
 - Fix issue where POST or PATCH a named file with a download link would
   always return self.context.image, not the actual file.
   [jaroel]
