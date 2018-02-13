@@ -75,10 +75,16 @@ class DeserializeFromJson(OrderingMixin, object):
                         value = deserializer(data[name])
                     except ValueError as e:
                         errors.append({
-                            'message': e.message, 'field': name, 'error': e.__class__.__name__})
+                            'message': e.message,
+                            'field': name,
+                            'error': e.__class__.__name__
+                        })
                     except ValidationError as e:
                         errors.append({
-                            'message': e.doc(), 'field': name, 'error': e.__class__.__name__})
+                            'message': e.doc(),
+                            'field': name,
+                            'error': e.__class__.__name__
+                        })
                     else:
                         field_data[name] = value
                         if value != dm.get():
@@ -102,7 +108,10 @@ class DeserializeFromJson(OrderingMixin, object):
                         bound.validate(dm.get())
                     except ValidationError as e:
                         errors.append({
-                            'message': e.doc(), 'field': name, 'error': e.__class__.__name__})
+                            'message': e.doc(),
+                            'field': name,
+                            'error': e.__class__.__name__
+                        })
 
         # Validate schemata
         for schema, field_data in schema_data.items():
